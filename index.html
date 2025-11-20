@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronc</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #555;
+        }
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ronc</h1>
+    <p>Redirecting to <a href="https://ronc.netlify.app">ronc.netlify.app</a> in <span id="countdown">10</span> seconds.</p>
+
+    <script>
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+
+        const interval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(interval);
+                window.location.href = "https://ronc.netlify.app";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
